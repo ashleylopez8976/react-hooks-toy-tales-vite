@@ -32,6 +32,15 @@ function handleDeleteToy(deletedToyId) {
   );
 }
 
+// Replace the updated toy while preserving the collection's order.
+function handleUpdateToy(updatedToy) {
+  setToys((currentToys) =>
+    currentToys.map((toy) =>
+      toy.id === updatedToy.id ? updatedToy : toy
+    )
+  );
+}
+
   return (
     <>
       <Header />
@@ -39,7 +48,11 @@ function handleDeleteToy(deletedToyId) {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} onDeleteToy={handleDeleteToy} />
+      <ToyContainer
+        toys={toys}
+        onDeleteToy={handleDeleteToy}
+        onUpdateToy={handleUpdateToy}
+      />
     </>
   );
 }
