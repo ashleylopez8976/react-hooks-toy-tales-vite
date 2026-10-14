@@ -42,3 +42,53 @@ be stored.
   should be sent in the body of the PATCH request, as a object:
   `{ likes: 10 }`), to update the toy on the server. Clicking on the button
   should also increase the number of likes on the DOM.
+
+## Completed Features
+
+- Fetches and displays all toys when the app loads using GET and `useEffect`.
+- Creates toys through a controlled form using POST, with initial likes set to 0.
+- Deletes donated toys using DELETE and removes their cards from the page.
+- Increases toy likes using PATCH and updates the displayed count.
+- Preserves the order of toys when updating likes.
+- Persists additions, deletions, and likes after refreshing the page.
+
+## Technologies Used
+
+- React
+- JavaScript and JSX
+- CSS
+- Vite
+- JSON Server
+- Vitest and React Testing Library
+
+## Testing
+
+Run tests in watch mode:
+
+```bash
+npm run test
+```
+
+Run the full test suite once:
+
+```bash
+npm run test -- --run
+```
+
+All included tests passed. Browser checks confirmed loading, creating,
+donating, and liking toys, including persistence after refreshing.
+
+## Backend IDs
+
+Toy IDs in `db.json` use strings to ensure the installed JSON Server
+version can locate existing toys for PATCH and DELETE requests.
+
+## Completed Application
+
+![Completed Toy Tales application](./public/toy-tales.png)
+
+## Author
+
+Ashley Lopez
+
+Completed as part of my Cyber Engineering coursework.
