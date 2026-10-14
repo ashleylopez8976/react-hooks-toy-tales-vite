@@ -25,6 +25,13 @@ function handleAddToy(newToy) {
   setToys((currentToys) => [...currentToys, newToy]);
 }
 
+// Remove the deleted toy from the displayed collection.
+function handleDeleteToy(deletedToyId) {
+  setToys((currentToys) =>
+    currentToys.filter((toy) => toy.id !== deletedToyId)
+  );
+}
+
   return (
     <>
       <Header />
@@ -32,7 +39,7 @@ function handleAddToy(newToy) {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} />
+      <ToyContainer toys={toys} onDeleteToy={handleDeleteToy} />
     </>
   );
 }
